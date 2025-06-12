@@ -1,0 +1,23 @@
+ /* Small extra styling to make it look nice */
+        .header {
+            background-color: #f8f9fa; /* Light gray background */
+            padding: 10px 20px; /* Some spacing */
+        }
+        .apple-music-icon {
+            width: 32px;
+            height: 32px;
+            margin-right: 10px;
+        }
+        .lead {
+            font-weight: 600;
+        }
+
+        .load{
+            font-weight: lighter;
+        }
+
+        .card {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
