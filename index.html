@@ -10,25 +10,48 @@
 </head>
 <body>
     <!-- HEADER SECTION -->
-    <header class="header d-flex justify-content-between align-items-center">
-        <!-- Logo (Apple Music Icon + Website Name) -->
-        <div class="d-flex align-items-center">
-            <svg class="apple-music-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                <path d="M10.995 0 .573.001Q0 0 0 .483c0 .35.01.705.093 1.051.063.352.166.68.329.999a3.36 3.36 0 0 0 1.47 1.468c.32.162.648.265 1 .328.347.063.7.084 1.051.093Q4.19 2.518 4.432 2.518h5.563v5.952c0 .14-.012.275-.106.39-.095.115-.21.15-.347.177l-.31.063c-.393.08-.65.133-.881.223a1.4 1.4 0 0 1-.519.333 1.25 1.25 0 0 1-.332.995c.031.297.166.582.395.792.156.142.35.25.578.296.236.047.49.031.858-.043.196-.04.38-.102.555-.205a1.4 1.4 0 0 1 .438-.405 1.5 1.5 0 0 1 .233-.55c.042-.202.052-.386.052-.588V2.865c0-.273-.143-.443-.4-.42-.04.003-.383.064-.424.073"/>
-            </svg>
-            <span class="fw-bold">Resonance</span> <!-- Your website name -->
-        </div>
-
-        <!-- Navigation Links -->
-        <div class="d-flex align-items-center">
-            <a href="#" class="nav-link px-2 link-secondary">Home</a>
-            <a href="#" class="nav-link px-2">Features</a>
-            <a href="#" class="nav-link px-2">Pricing</a>
-            <a href="#" class="nav-link px-2">About</a>
-            <button class="btn btn-outline-dark ms-3">Login</button>
-            <button class="btn btn-dark ms-2">Sign Up</button>
+     <!-- Responsive Header -->
+    <header class="header navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <!-- Logo and Brand -->
+            <div class="brand-container d-flex align-items-center">
+                <svg class="apple-music-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M10.995 0 .573.001Q0 0 0 .483c0 .35.01.705.093 1.051.063.352.166.68.329.999a3.36 3.36 0 0 0 1.47 1.468c.32.162.648.265 1 .328.347.063.7.084 1.051.093Q4.19 2.518 4.432 2.518h5.563v5.952c0 .14-.012.275-.106.39-.095.115-.21.15-.347.177l-.31.063c-.393.08-.65.133-.881.223a1.4 1.4 0 0 1-.519.333 1.25 1.25 0 0 1-.332.995c.031.297.166.582.395.792.156.142.35.25.578.296.236.047.49.031.858-.043.196-.04.38-.102.555-.205a1.4 1.4 0 0 1 .438-.405 1.5 1.5 0 0 1 .233-.55c.042-.202.052-.386.052-.588V2.865c0-.273-.143-.443-.4-.42-.04.003-.383.064-.424.073"/>
+                </svg>
+                <span class="brand-name">Resonance</span>
+            </div>
+            
+            <!-- Mobile Toggle Button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!-- Navigation Menu -->
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link active">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">About</a>
+                    </li>
+                </ul>
+                
+                <!-- Auth Buttons -->
+                <div class="btn-container d-flex">
+                    <button class="btn btn-login me-2">Login</button>
+                    <button class="btn btn-signup">Sign Up</button>
+                </div>
+            </div>
         </div>
     </header>
+    
 
     <!-- Welcome portion -->
     <div class="row flex-lg-row-reverse align-items-center g-5 py-5 px-5"> 
