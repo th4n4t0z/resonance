@@ -21,3 +21,35 @@
             background-position: center;
             background-repeat: no-repeat;
         }
+
+        /* Underline animation effect */
+        .nav-link {
+            position: relative;
+            padding: 0.5rem 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .underline-animation {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #202020);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover .underline-animation,
+        .nav-link.active .underline-animation {
+            width: 100%;
+        }
+
+        /* Active state styles */
+        .nav-link.active {
+            font-weight: 600;
+        }
+
+        /* Hover state styles */
+        .nav-link:hover {
+            color: #202020 !important;
+        }
