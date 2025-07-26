@@ -1,251 +1,239 @@
-/* Base Styles */
 :root {
-    --primary: #6c63ff;
-    --primary-dark: #5a52e0;
-    --text-light: #ffffff;
-    --text-gray: rgba(255, 255, 255, 0.7);
-    --bg-dark: #121212;
-    --card-bg: rgba(30, 30, 30, 0.9);
-    --input-bg: rgba(255, 255, 255, 0.05);
-    --border: rgba(255, 255, 255, 0.1);
+  --primary-color: #471396;
+  --secondary-color: #093FB4 ;
+  --dark-color: #202020;
+  --light-gray: #d1d8d6;
+  --white: #ffffff;
+  --transition: all 0.3s ease;
 }
 
+/* Base Styles */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: var(--text-light);
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    background-color: var(--bg-dark);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden;
 }
 
 /* Video Background */
 .video-background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -2;
-    overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
 }
 
 .video-background video {
-    min-width: 100%;
-    min-height: 100%;
-    object-fit: cover;
-    filter: brightness(0.3) blur(2px);
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
 }
 
 .video-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
 }
 
 /* Main Container */
 .container {
-    width: 100%;
-    padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
 }
 
 .card-wrapper {
-    max-width: 1200px;
-    margin: 0 auto;
+  width: 100%;
+  max-width: 500px; /* Narrower for better form focus */
 }
 
-/* Card Layout */
 .card {
-    display: flex;
-    background: var(--card-bg);
-    border-radius: 25px;
-    overflow: hidden;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(8px);
-    border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 2.5rem;
 }
 
-/* Form Section */
-.form-section {
-    flex: 1;
-    padding: 40px;
-    min-width: 400px;
+/* Form Header */
+.form-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
 }
 
-.form-section h1 {
-    text-align: center;
-    margin-bottom: 30px;
-    font-size: 2rem;
+.form-header h1 {
+  color: var(--white);
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.form-header p {
+  color: var(--light-gray);
+  font-size: 1rem;
 }
 
 /* Form Elements */
 .form-group {
-    display: flex;
-    align-items: center;
-    margin-bottom: 25px;
-    position: relative;
+  position: relative;
+  margin-bottom: 1.5rem;
 }
 
 .form-group i {
-    color: var(--text-gray);
-    font-size: 1.2rem;
-    margin-right: 15px;
-    width: 24px;
-    text-align: center;
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--light-gray);
+  font-size: 1.1rem;
 }
 
 .form-input {
-    flex: 1;
-    position: relative;
+  position: relative;
 }
 
 .form-input input {
-    width: 100%;
-    padding: 12px 15px;
-    background: var(--input-bg);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    color: var(--text-light);
-    font-size: 1rem;
-    transition: all 0.3s ease;
+  width: 100%;
+  padding: 1rem 1rem 1rem 3rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: var(--white);
+  font-size: 1rem;
+  transition: var(--transition);
 }
 
 .form-input input:focus {
-    outline: none;
-    border-color: var(--primary);
-    box-shadow: 0 0 0 2px rgba(108, 99, 255, 0.25);
+  outline: none;
+  border-color: var(--primary-color);
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 0 3px rgba(26, 61, 18, 0.2);
 }
 
 .form-input label {
-    position: absolute;
-    left: 15px;
-    top: 12px;
-    color: var(--text-gray);
-    pointer-events: none;
-    transition: all 0.2s ease;
-    background-color: transparent;
-    padding: 0 5px;
+  position: absolute;
+  left: 3rem;
+  top: 1rem;
+  color: var(--light-gray);
+  transition: var(--transition);
+  pointer-events: none;
 }
 
 .form-input input:focus + label,
 .form-input input:not(:placeholder-shown) + label {
-    transform: translateY(-22px) scale(0.85);
-    color: var(--primary);
-    background-color: var(--card-bg);
+  top: -0.6rem;
+  left: 2.2rem;
+  font-size: 0.8rem;
+  background: var(--primary-color);
+  padding: 0 0.5rem;
+  border-radius: 4px;
 }
 
 /* Terms Checkbox */
 .terms {
-    display: flex;
-    align-items: center;
-    margin: 25px 0;
+  display: flex;
+  align-items: center;
+  margin: 1.5rem 0;
 }
 
 .terms input {
-    margin-right: 10px;
-    accent-color: var(--primary);
+  margin-right: 0.8rem;
+  accent-color: var(--primary-color);
 }
 
 .terms label {
-    color: var(--text-gray);
-    font-size: 0.9rem;
+  color: var(--light-gray);
+  font-size: 0.9rem;
 }
 
 .terms a {
-    color: var(--primary);
-    text-decoration: none;
+  color: var(--white);
+  text-decoration: underline;
+  transition: var(--transition);
 }
 
 .terms a:hover {
-    text-decoration: underline;
+  color: var(--light-gray);
 }
 
 /* Register Button */
 .btn-register {
-    width: 100%;
-    padding: 12px;
-    background: var(--primary);
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
+  width: 100%;
+  padding: 1rem;
+  background: var(--primary-color);
+  color: var(--white);
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  margin-bottom: 1.5rem;
 }
 
 .btn-register:hover {
-    background: var(--primary-dark);
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(108, 99, 255, 0.4);
+  background: var(--secondary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Image Section */
-.image-section {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 40px; /* Equal padding on all sides */
-    background: rgba(0, 0, 0, 0.2);
+/* Login Link */
+.login-link {
+  text-align: center;
+  color: var(--light-gray);
+  font-size: 0.9rem;
 }
 
-.signup-image {
-    max-width: 100%;
-    height: auto;
-    max-height: 500px;
-    border-radius: 15px;
-    object-fit: contain;
+.login-link a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+  color: var(--light-gray);
 }
 
 /* Responsive Design */
-@media (max-width: 992px) {
-    .card {
-        flex-direction: column;
-    }
-    
-    .image-section {
-        order: -1;
-        padding: 40px 40px 20px 40px; /* Top: 40px, Right: 40px, Bottom: 20px, Left: 40px */
-    }
-    
-    .signup-image {
-        max-height: 300px;
-    }
-    
-    .form-section {
-        min-width: auto;
-    }
-}
-
 @media (max-width: 576px) {
-    .container {
-        padding: 15px;
-    }
-    
-    .form-section {
-        padding: 30px 20px;
-    }
-    
-    .image-section {
-        padding: 30px 20px 20px 20px; /* Top: 30px, Right: 20px, Bottom: 20px, Left: 20px */
-    }
-    
-    .form-section h1 {
-        font-size: 1.8rem;
-    }
-    
-    .signup-image {
-        max-height: 250px;
-    }
+  .container {
+    padding: 1rem;
+  }
+
+  .card {
+    padding: 1.5rem;
+    border-radius: 12px;
+  }
+
+  .form-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .form-input input {
+    padding: 0.8rem 0.8rem 0.8rem 2.8rem;
+  }
+
+  .form-input label {
+    left: 2.8rem;
+  }
+
+  .form-input input:focus + label,
+  .form-input input:not(:placeholder-shown) + label {
+    left: 2rem;
+  }
 }
